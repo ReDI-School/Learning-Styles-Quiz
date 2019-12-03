@@ -1,4 +1,5 @@
 require_relative '../config/environment'
+require_relative '../app/quiz_app'
 
-app = nameOfYourApp.new
+app = QuizApp.new
 app.run
