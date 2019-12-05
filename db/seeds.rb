@@ -81,16 +81,16 @@ quiz2 = Quiz.create(
 )
 LearningStyle.create(
     prompt: "\n    Together, perceiving and processing describes the whole range of the learning and communication experience. All learners engage in all types of learning, but most seem to favor one particular type.",
-    type1:  "\nType 1 - Wants to know WHY
+    type1:  "Type 1 - Wants to know WHY
 
-    The imaginative type likes being absorbed into feelings and spending time reflecting, seeking personal meaning and involvement. Type 1 is focused on personal values for them selves and others and making connections. Favourite question: Why?\n",
-    type2: "\nType 2 - Wants to know WHAT
+    The imaginative type likes being absorbed into feelings and spending time reflecting, seeking personal meaning and involvement. Type 1 is focused on personal values for them selves and others and making connections. Favourite question: Why?\n\n",
+    type2: "Type 2 - Wants to know WHAT
 
-    The analytic type likes listening to and thinking about information, seeking facts, thinking through ideas, formulating ideas - and learning what the experts think. Favourite question: What?\n",
-    type3: "\nType 3 - Wants to know HOW
+    The analytic type likes listening to and thinking about information, seeking facts, thinking through ideas, formulating ideas - and learning what the experts think. Favourite question: What?\n\n",
+    type3: "Type 3 - Wants to know HOW
 
-    The common sense type likes thinking and doing. Type 3 are most happy experimenting, building and creating usability. They like tinkering and applying useful ideas. Favourite question: How? \n",
-    type4: "\nType 4 - Wants to find out WHAT IF
+    The common sense type likes thinking and doing. Type 3 are most happy experimenting, building and creating usability. They like tinkering and applying useful ideas. Favourite question: How? \n\n",
+    type4: "Type 4 - Wants to find out WHAT IF
 
-    The dynamic type likes doing and feeling. They are constantly seeking hidden possibilities and exploring ideas to create original adaptations, they learn by trial and error and self-discovery. Favourite question: What if? \n")
+    The dynamic type likes doing and feeling. They are constantly seeking hidden possibilities and exploring ideas to create original adaptations, they learn by trial and error and self-discovery. Favourite question: What if? \n\n")
    
