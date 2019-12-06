@@ -68,17 +68,9 @@ q2 = Question.create(
     c: 'C. You seek utility and results. ',
     d: 'D. You seek challenges. You are a risk taker. ')
 
-quiz1 = Quiz.create(
-    user_id: u1.id,
-    question_id: q1.id,
-    answer: 'a'
-)
-quiz2 = Quiz.create(
-    user_id: u1.id,
-    question_id: q2.id,
-    answer: 'b'
 
-)
+
+
 LearningStyle.create(
     prompt: "\n    Together, perceiving and processing describes the whole range of the learning and communication experience. All learners engage in all types of learning, but most seem to favor one particular type.",
     type1:  "Type 1 - Wants to know WHY
@@ -94,3 +86,5 @@ LearningStyle.create(
 
     The dynamic type likes doing and feeling. They are constantly seeking hidden possibilities and exploring ideas to create original adaptations, they learn by trial and error and self-discovery. Favourite question: What if? \n\n")
    
+
+    yes= "yes"
