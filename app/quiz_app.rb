@@ -37,7 +37,6 @@ class QuizApp
             clear_screen
             @user = User.create(name: @name)
         end
-
     end
         
     def main_menu    
@@ -66,6 +65,7 @@ class QuizApp
             delete_account
         elsif choice_array[5] ==response.to_i #Generates stats
             clear_screen
+            puts "The following represents data collected from all who have previously taken this quiz."
             totals
             percent_a
             percent_b
@@ -85,7 +85,7 @@ class QuizApp
     def new_quiz_option #prompts user before quiz
         bool = true
         while bool do
-            puts "Please reserve about 5 minutes of your time to take this quiz.\n\nYou will be asked 10 questions about how you learn, teach, and interact with others generally.\n\nTaking a new quiz will overwrite your previous quiz data (if you have any). \n\nDo you want to continue? Enter Yes or No."
+            puts "Please reserve about 5 minutes of your time to take this quiz.\n\nYou will be asked 10 questions about how you learn, teach, and interact with others generally.\n\nStarting a new quiz will overwrite your previous quiz data (if you have any). \n\nDo you want to continue? Enter Yes or No."
             new_quiz_answer = gets.chomp.downcase
             if new_quiz_answer == 'yes'
                 bool = false
@@ -240,22 +240,22 @@ class QuizApp
 
     def percent_a
         percentage = ((@a_count / @total.to_f) *100).round(2)
-        puts "\n#{percentage}% of answers point towards a Type 1 learning style."
+        puts "\n#{percentage}% of all answers point towards a Type 1 learning style."
     end
 
     def percent_b
         percentage = ((@b_count / @total.to_f) *100).round(2)
-        puts "\n#{percentage}% of answers point towards a Type 2 learning style."
+        puts "\n#{percentage}% of all answers point towards a Type 2 learning style."
     end
 
     def percent_c
         percentage = ((@c_count / @total.to_f) *100).round(2)
-        puts "\n#{percentage}% of answers point towards a Type 3 learning style."
+        puts "\n#{percentage}% of all answers point towards a Type 3 learning style."
     end
 
     def percent_d
         percentage = ((@d_count / @total.to_f) *100).round(2)
-        puts "\n#{percentage}% of answers point towards a Type 4 learning style.\n"
+        puts "\n#{percentage}% of all answers point towards a Type 4 learning style.\n"
     end
 
     def key_to_cont #press any key to continue
