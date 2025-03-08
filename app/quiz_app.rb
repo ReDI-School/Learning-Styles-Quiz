@@ -1,5 +1,6 @@
 require 'io/console'
 require_all 'app'
+require 'rainbow'
 
 class QuizApp
 
@@ -15,16 +16,16 @@ class QuizApp
     private
 
     def intro
-        puts "Hello! Welcome to the Learning Style's Quiz 🤓📚"
+        puts "Hello! Welcome to the Learning Style's Quiz 🤓📚".green
         sleep(2)
-        puts "\nThis quiz is based on the 4MAT Model of Learning. This quiz can help you find out how it is you learn best."
+        puts "\nThis quiz is based on the 4MAT Model of Learning. This quiz can help you find out how it is you learn best.".green
         key_to_cont
         clear_screen
     end
 
     def login 
         #Takes in a user name and then matches it up with a particular user instance. 
-        puts "Please input your first and last name so you can log in or create a new profile 🥳"
+        puts "Please input your first and last name so you can log in or create a new profile 🥳".green
         @name = gets.chomp.downcase
         @user = User.find_by(name: @name)
         if @user
@@ -42,12 +43,12 @@ class QuizApp
     def main_menu    
         puts "\nFor the following prompt, please enter a number."
         puts "\nWhat would you like to do today?
-            1. Take a new quiz.
-            2. Look at your previously determined learning style.
-            3. List the 4 learning styles.
-            4. Log out.
+            1. ✅ Take a new quiz. 
+            2. ⏳ Look at your previously determined learning style.
+            3. 🔍 List the 4 learning styles. 
+            4. ❌ Exit. 
             5. Delete account.
-            6. View Statistics"
+            6. View Statistics".green
         response = gets.chomp
         choice_array = [1,2,3,4,5,6]
         if choice_array[0] == response.to_i #Take new quiz
@@ -60,12 +61,13 @@ class QuizApp
             list_learning_styles
             main_menu
         elsif choice_array[3] == response.to_i #Log Out
-            puts "Goodbye! 🙋‍♂️"
+            clear_screen
+            puts "Goodbye! 🥰"
         elsif choice_array[4] == response.to_i #Delete Account
             delete_account
-        elsif choice_array[5] ==response.to_i #Generates stats
+        elsif choice_array[5] == response.to_i #Generates stats
             clear_screen
-            puts "The following represents data collected from all who have previously taken this quiz."
+            puts "The following represents data collected from all who have previously taken this quiz.".green
             totals
             percent_a
             percent_b
@@ -74,6 +76,9 @@ class QuizApp
             key_to_cont
             clear_screen
             main_menu
+        elsif choice_array[6] == response.to_i
+            puts "goodbye 🥰"
+            exit 0
         else
             puts "Invalid input 😡"
             sleep(1)
@@ -85,7 +90,7 @@ class QuizApp
     def new_quiz_option #prompts user before quiz
         bool = true
         while bool do
-            puts "Please reserve about 5 minutes of your time to take this quiz.\n\nYou will be asked 10 questions about how you learn, teach, and interact with others generally.\n\nStarting a new quiz will overwrite your previous quiz data (if you have any). \n\nDo you want to continue? Enter Yes or No."
+            puts "Please reserve about 5 minutes of your time to take this quiz.\n\nYou will be asked 10 questions about how you learn, teach, and interact with others generally.\n\nStarting a new quiz will overwrite your previous quiz data (if you have any). \n\nDo you want to continue? Enter Yes or No.".green
             new_quiz_answer = gets.chomp.downcase
             if new_quiz_answer == 'yes'
                 bool = false
@@ -112,11 +117,11 @@ class QuizApp
         i = 0
         while i < Question.all.count do 
         clear_screen
-        puts "#{i +1} of 10: " + Question.all[i].question 
-        puts Question.all[i].a 
-        puts Question.all[i].b 
-        puts Question.all[i].c 
-        puts Question.all[i].d
+        puts "#{i +1} of 10: " + Question.all[i].question.red
+        puts Question.all[i].a.green 
+        puts Question.all[i].b.green 
+        puts Question.all[i].c.green
+        puts Question.all[i].d.green
         answer = gets.chomp.downcase
 
             if accepted_answers.include?(answer)
@@ -143,7 +148,7 @@ class QuizApp
             retrieve_learning_style
             main_menu
         else
-            puts "You have no quiz data! Please take a quiz 😄"
+            puts "You have no quiz data! Please take a quiz 😄".red
             sleep(1)
             clear_screen
             main_menu
@@ -192,10 +197,10 @@ class QuizApp
 
     def learning_styles #sets each style to a variable
         @ls_prompt = LearningStyle.first.prompt  
-        @type1 = LearningStyle.first.type1
-        @type2 = LearningStyle.first.type2
-        @type3 = LearningStyle.first.type3
-        @type4 = LearningStyle.first.type4
+        @type1 = LearningStyle.first.type1.red
+        @type2 = LearningStyle.first.type2.green
+        @type3 = LearningStyle.first.type3.magenta
+        @type4 = LearningStyle.first.type4.cyan
     end
 
     def list_learning_styles #prints all learning styles to screen.
