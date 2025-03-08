@@ -164,7 +164,7 @@ class QuizApp
             delete_option = gets.chomp.downcase
             
             if delete_option == 'yes'
-                puts "Goodbye! 🙋‍♂️"
+                puts "Goodbye! 🥰"
                 Quiz.all.where(user_id: @user.id).destroy_all
                 @user.destroy
                 bool = false
