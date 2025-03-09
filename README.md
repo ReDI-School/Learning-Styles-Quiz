@@ -1,7 +1,9 @@
-### Setting Up Process 
+## Setting Up Process 
 1. Fork and clone repo onto your computer
-2. In your terminal, go to this repo's directory and run `bundle`
-2. Migrate: run `rake db: migrate`
-3. Run `rake db: seed` in your terminal
-4. Run `ruby bin/run.rb`
-5. Learn about how you learn!
+2. Start a Codespace 
+3. Run in your terminal: `python quiz.py`
+4. Learn about how you learn!
+
+### Credits:
+This app is forked from [jonathanbrierre repo](https://github.com/jonathanbrierre/Learning-Styles-Quiz)
+Based on [4Mat learning styles](https://4mat.org/learning-styles/)
