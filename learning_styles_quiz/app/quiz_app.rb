@@ -51,7 +51,7 @@ class QuizApp
             2. ⏳ Look at your previously determined learning style.
             3. 🔍 List the 4 learning styles. 
             4. ❌ Exit. 
-            5. Delete account.
+            5. Delete stored data.
             6. View Statistics".green
         response = gets.chomp
         choice_array = [1,2,3,4,5,6]

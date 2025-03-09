@@ -12,8 +12,3 @@ def run_app():
     print("✅ launching learning styles app")
     os.system('ruby bin/run.rb')
 
-if not os.path.isfile('db/development.db'):
-    install_app()
-    run_app()
-else:
-    run_app()
