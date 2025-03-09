@@ -117,18 +117,22 @@ class QuizApp
         i = 0
         while i < Question.all.count do 
         clear_screen
-        puts "#{i +1} of 10: " + Question.all[i].question.red
-        puts Question.all[i].a.green 
-        puts Question.all[i].b.green 
-        puts Question.all[i].c.green
-        puts Question.all[i].d.green
+        puts "#{i +1} of 10: " + Question.all[i].question
+        puts "🟥 "+Question.all[i].a.split('\n')[0].red
+        puts " "*5+Question.all[i].a.split('\n')[1].red
+        puts "🟩 "+Question.all[i].b.split('\n')[0].green 
+        puts " "*5+Question.all[i].b.split('\n')[1].green
+        puts "🟪 "+Question.all[i].c.split('\n')[0].magenta
+        puts " "*5+Question.all[i].c.split('\n')[1].magenta
+        puts "🟦 "+Question.all[i].d.split('\n')[0].cyan
+        puts " "*5+Question.all[i].d.split('\n')[1].cyan
         answer = gets.chomp.downcase
 
             if accepted_answers.include?(answer)
                 Quiz.create(user_id: @user.id, question_id: Question.all[i].id, answer: answer)
                 i +=1
             else
-                puts "Please put a valid input 😡"
+                puts "Please put a valid input: a, b, c or d"
                 sleep(1)
             end
         end

@@ -1,16 +1,18 @@
 DEFAULT_GOL: run
 
 bundle:
-	echo "✅ installing plugins"
+	@echo "✅ installing plugins"
 	@bundle
 
 generate-db:
-	echo "✅ generating database"
+	@echo "✅ generating database"
 	@rake db:migrate
 	@rake db:seed
 
-run:
+install:
 	make bundle generate-db
-	echo "✅ launching aplication "
 	@ruby bin/run.rb
 
+run:
+	@echo "✅ launching aplication "
+	@ruby bin/run.rb
