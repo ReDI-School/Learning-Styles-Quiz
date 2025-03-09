@@ -16,11 +16,13 @@ class QuizApp
     private
 
     def intro
-        puts "Hello! Welcome to the Learning Style's Quiz 🤓📚".green
+        puts "Hello! Welcome to the Learning Style's Quiz 🤓📚\n".green
         sleep(0.5)
-        puts "\nThis quiz is based on the 4MAT Model of Learning. This quiz can help you find out how it is you learn best.
-        The data collected by this app is stored in this system for app functionality, no information is being shared.
-        This version of the app is tested to work with Ruby 3.3.4 for Github Codespaces".green
+        puts "This quiz is designed using the 4MAT Model of Learning to help you understand your preferred learning style. By identifying how you learn best, you can enhance your learning experiences and achieve better outcomes.".green
+        puts "Your Data and Privacy:".red
+        puts "Any information you provide will be securely stored within this app to ensure its functionality. Rest assured, your data will not be shared with anyone else.".red
+        puts "Technical Requirements:".cyan
+        puts "This version of the app has been tested and optimized for use with Ruby 3.3.4 in GitHub Codespaces.".cyan
         key_to_cont
         clear_screen
     end
